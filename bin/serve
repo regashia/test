@@ -1,0 +1,7 @@
+#!/bin/bash -eu
+
+APP_ROOT=$(cd $(dirname $0)/../ && pwd)
+COMPOSE_FILE=${APP_ROOT}/tools/docker-compose/docker-compose.yml
+
+docker-compose -f ${COMPOSE_FILE} build
+docker-compose -f ${COMPOSE_FILE} up -d
